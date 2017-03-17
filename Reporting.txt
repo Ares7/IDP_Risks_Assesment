@@ -1,0 +1,508 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.EM -I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100
+Relation:     Target
+Instances:    201
+Attributes:   6
+              InvetmentName
+              VaR_95(%)
+              StdDev
+              Risk_of_Loss (%)
+              Beta
+              Sharpe
+Test mode:    split 66% train, remainder test
+
+
+=== Clustering model (full training set) ===
+
+
+EM
+==
+
+Number of clusters selected by cross validation: 3
+Number of iterations performed: 23
+
+
+                    Cluster
+Attribute                 0        1        2
+                     (0.42)   (0.47)   (0.11)
+==============================================
+InvetmentName
+  TGTG.DE                  2        1        1
+  UUUG.DE                  2        1        1
+  VSCk.DE             1.9986   1.0014        1
+  HRPKk.F                  2        1        1
+  LUMG.F                   2        1        1
+  AAQG.DE             1.9992   1.0008        1
+  ARLG.DE                  1        2        1
+  E7SG.DE                  2        1        1
+  ADNGk.DE                 1        2        1
+  ADSGn.DE                 1        1        2
+  ADDG.DE             1.9281   1.0719        1
+  ADLG.DE                  1        2        1
+  ADAG.DE                  1        2        1
+  AGXG.F                   2        1        1
+  AAHG_p.F                 2        1        1
+  AAHG.F                   2        1        1
+  AIXGn.DE            1.9131   1.0869        1
+  ABAG.F                   1        1        2
+  MTVG.DE                  2        1        1
+  A1OS.DE                  1   1.9991   1.0009
+  AEIG.DE                  1        2        1
+  SWOG.F                   2        1        1
+  ALVG.DE                  1        1        2
+  ANOG.DE                  2        1        1
+  ATFG.DE             1.9288        1   1.0712
+  AOXG.DE             1.7982   1.2018        1
+  AMDG.DE                  1   1.9998   1.0002
+  TXAG.F                   2        1        1
+  AROG.DE                  2        1        1
+  AYDGn.DE                 2        1        1
+  5ABG.F                   2        1        1
+  AOFG.DE                  1   1.9996   1.0004
+  NSUG.DE                  1        1        2
+  NAFG.DE                  1        2        1
+  AVES.DE                  1        1        2
+  SPRGn.DE                 1        2        1
+  BTTG.F                   2        1        1
+  BASFn.DE                 1   1.9999   1.0001
+  BSLG.DE                  1        2        1
+  BST1.DE             1.9984   1.0016        1
+  B5AG.DE                  1   1.9995   1.0004
+  BAYGn.DE                 1   1.9439   1.0561
+  BYWGnx.DE                1        2        1
+  BYWG.DE                  1   1.0001   1.9999
+  BKTG_p.F                 2        1        1
+  USEG.DE             1.9996   1.0004        1
+  BC8G.DE                  1   1.9998   1.0002
+  BEIG.DE                  1        2        1
+  BEZ.DE              1.9994   1.0006        1
+  MBHG_p.F                 1        1        2
+  BDTG.DE                  1   1.0183   1.9817
+  ARTG.DE                  1   1.9998   1.0002
+  BHSG.F              1.9988        1   1.0012
+  BIJG.DE                  1        2        1
+  GBFG.DE                  1        2        1
+  B8FGn.DE            1.9991   1.0009        1
+  BIOG.DE                  1        2        1
+  BIOG_p.DE                1        2        1
+  BTBA.DE                  2        1        1
+  BMWG_p.DE                1   1.9962   1.0038
+  BMWG.DE                  1   1.9752   1.0248
+  BSYG.F                   2        1        1
+  BNNn.DE                  1        1        2
+  BNRGn.DE                 1        2        1
+  DTDGk.DE                 2        1        1
+  BVB.DE              1.9995   1.0005        1
+  COKG.DE                  1        2        1
+  HWAG.DE             1.9749   1.0251        1
+  CSHG.DE                  1        2        1
+  CEVG.DE             1.9696   1.0304        1
+  CWCG.DE                  1   1.9997   1.0003
+  CSGG.F                   2        1        1
+  CU1G.DE             1.9984   1.0016        1
+  CAGGk.DE                 1        2        1
+  CNWKk.DE            1.9988   1.0012        1
+  CDBG.DE             1.9918   1.0082        1
+  CBKG.DE             1.0001   1.9999        1
+  COPMa.DE                 1        2        1
+  EV4G.DE             1.9998   1.0002        1
+  CONG.DE                  1        1        2
+  1COV.DE                  1        2        1
+  ACWNn.DE                 1   1.9362   1.0638
+  AFXG.DE                  1        2        1
+  CE2G.DE             1.9975   1.0025        1
+  CURG.DE                  2        1        1
+  DAIGn.DE                 1   1.9999   1.0001
+  DAMG.DE                  1   1.9176   1.0824
+  FAM1.F                   2        1        1
+  ERMGk.DE            1.9996   1.0004        1
+  333.DE              1.9999        1   1.0001
+  DEXGn.DE                 1        2        1
+  DMRE.DE              1.999    1.001        1
+  DBKGn.DE                 1        2        1
+  DBANn.DE                 1        2        1
+  DB11.DE                  1        1        2
+  DEQGn.DE                 1        2        1
+  PBBG.DE             1.0004   1.9996        1
+  DPWGn.DE                 1        2        1
+  DTEGn.DE                 1        2        1
+  DWNG.DE                  1        2        1
+  DREGa.F                  2        1        1
+  DEZG.DE             1.9958   1.0042        1
+  DFTKn.DE            1.9907    1.009   1.0002
+  DICn.DE             1.9275   1.0725        1
+  WING.DE                  1        2        1
+  DIEG.F                   2        1        1
+  GILG.DE                  1   1.9999   1.0001
+  HNLG.DE                  1        2        1
+  DRWG_p.DE                1   1.9999   1.0001
+  DRWG.DE                  1        2        1
+  DRIG.DE                  1        2        1
+  DKAG.F                   1        1        2
+  DUEG.DE                  1   1.9944   1.0056
+  DVBG.F                   2        1        1
+  EONGn.DE            1.0001   1.9999        1
+  ESYG.DE                  2        1        1
+  EUZG.DE             1.0031   1.9969        1
+  E4CG.DE             1.9985   1.0015        1
+  EING_p.DE                1   1.9999   1.0001
+  EISG.F              1.9986        1   1.0014
+  ELNk.F                   2        1        1
+  ELGG.DE                  1        2        1
+  ZILGn.DE                 1        2        1
+  ELBG.DE              1.048        1    1.952
+  EMQG.DE                  2        1        1
+  EBKG.DE             1.0003    1.999   1.0006
+  EKTG.F                   2        1        1
+  EXJ.F                    2        1        1
+  ECXn.F               1.981    1.019        1
+  EUCAn.DE            1.9948   1.0052        1
+  EVDG.DE                  1        2        1
+  EVKn.DE                  1        2        1
+  EVTG.DE             1.9964   1.0036        1
+  BTCGk.F             1.9987   1.0013        1
+  FVIG.DE                  2        1        1
+  HBD1.F                   2        1        1
+  FIEG.DE                  1        2        1
+  SISG.DE             1.0167   1.9832        1
+  FRSG.DE                  2        1        1
+  FEVG.DE                  2        1        1
+  FPHG.DE                  2        1        1
+  FRAG.DE                  1        2        1
+  FNTGn.DE                 1        2        1
+  FREG.DE                  1        2        1
+  FMEG.DE                  1   1.9999   1.0001
+  FNGG.F                   2        1        1
+  CEAG.DE             1.0002        1   1.9998
+  FROG_p.F                 2        1        1
+  FROG.F                   2        1        1
+  FPEG_p.DE                1        2        1
+  FPEG.DE                  1        2        1
+  G1AG.DE                  1        2        1
+  WWGG.F                   1        1        2
+  GMEG.DE              1.996    1.004        1
+  GXIG.DE                  1        2        1
+  GWIG.DE                  1        2        1
+  GSC1n.DE                 1        2        1
+  GFKG.DE                  1        2        1
+  GFTG.DE                  1        2        1
+  GGS.DE                   2        1        1
+  GKSG.DE                  1   1.9705   1.0295
+  GMMG.DE                  1   1.9999   1.0001
+  GLJn.DE                  1        1        2
+  GIBG.F                   1        1        2
+  G7BG.F                   2        1        1
+  2HR.DE                   1        2        1
+  HABG.DE             1.9816   1.0184        1
+  HNRGn.DE                 1   1.9958   1.0042
+  H9YG.F                   2        1        1
+  HLAG.DE                  1        2        1
+  HAWG.DE                  1   1.9998   1.0002
+  IPOG.F                   2        1        1
+  HEIG.DE                  1   1.9983   1.0017
+  HDDG.DE             1.9986   1.0014        1
+  H2Fn.DE             1.9995   1.0005        1
+  HLE.DE                   1        2        1
+  HNKG.DE                  1        2        1
+  HNKG_p.DE                1   1.9995   1.0005
+  RTMLk.F                  1        1        2
+  HHFGn.DE                 1   1.9999        1
+  HOTG.DE                  1        1        2
+  HOC.DE              1.9998   1.0002        1
+  HBMG.DE                  1        2        1
+  HBH.DE                   1        2        1
+  BOSSn.DE                 1   1.9745   1.0255
+  HYQGn.DE                 1   1.0011   1.9989
+  IFAG.F                   2        1        1
+  FAOGn.DE            1.0001    1.028   1.9719
+  INHG.DE                  1        2        1
+  IFS1.F                   2        1        1
+  IFXGn.DE                 1        2        1
+  IXXG.DE             1.0002   1.9997        1
+  IGY.DE                   1   1.9999   1.0001
+  ISHG.DE             1.9994   1.0006        1
+  ITMG.DE                  2        1        1
+  IS7G.DE                  2        1        1
+  IVXG.DE                  1   1.9995   1.0005
+  ISRG.DE                  1   1.9926   1.0074
+  I7NG.DE                  2        1        1
+  IVUG.DE             1.9995   1.0005        1
+  JENG.DE                  1        2        1
+  [total]           286.4159 295.2948 222.2893
+VaR_95(%)
+  mean              -17.1197-122.9001-438.8369
+  std. dev.          13.4439  69.7465 650.8887
+
+StdDev
+  mean                 0.104   0.7488   2.6489
+  std. dev.           0.0817    0.424   3.8973
+
+Risk_of_Loss (%)
+  mean               29.9482  50.6977  36.2668
+  std. dev.          18.1859   6.4594  18.1992
+
+Beta
+  mean                0.0012   0.0281   0.0564
+  std. dev.           0.0015   0.0228   0.0766
+
+Sharpe
+  mean                0.0306   0.0258   0.0591
+  std. dev.           0.0176   0.0063   0.1263
+
+
+
+Time taken to build model (full training data) : 2.27 seconds
+
+=== Model and evaluation on test split ===
+
+EM
+==
+
+Number of clusters selected by cross validation: 6
+Number of iterations performed: 17
+
+
+                    Cluster
+Attribute                 0        1        2        3        4        5
+                     (0.29)   (0.13)   (0.31)   (0.02)   (0.15)   (0.09)
+=========================================================================
+InvetmentName
+  TGTG.DE                  1        1        2        1        1        1
+  UUUG.DE                  1        1        1        1        1        1
+  VSCk.DE             1.0031        1   1.9969        1        1        1
+  HRPKk.F                  1        1        2        1        1        1
+  LUMG.F                   1        1        1        1        1        1
+  AAQG.DE                  1        1        1        1        1        1
+  ARLG.DE             1.9985        1        1        1        1   1.0014
+  E7SG.DE                  1        1        2        1        1        1
+  ADNGk.DE                 1        1        1        1        1        1
+  ADSGn.DE                 1        1        1        1        2        1
+  ADDG.DE              1.675        1    1.325        1        1        1
+  ADLG.DE                  2        1        1        1        1        1
+  ADAG.DE                  1        1        1        1        1        1
+  AGXG.F                   1   1.9988   1.0012        1        1        1
+  AAHG_p.F                 1        1        2        1        1        1
+  AAHG.F                   1   1.0039   1.9961        1        1        1
+  AIXGn.DE            1.9017        1   1.0983        1        1        1
+  ABAG.F                   1        1        1        1        1        2
+  MTVG.DE                  1        1        2        1        1        1
+  A1OS.DE                  1        1        1        1        2        1
+  AEIG.DE                  1        1        1        1        1        1
+  SWOG.F                   1   1.9995   1.0005        1        1        1
+  ALVG.DE                  1        1        1   1.9857   1.0143        1
+  ANOG.DE                  1        1        2        1        1        1
+  ATFG.DE                  1        1        2        1        1        1
+  AOXG.DE             1.8186        1   1.1814        1        1        1
+  AMDG.DE                  1        1        1        1        2        1
+  TXAG.F                   1   1.9999   1.0001        1        1        1
+  AROG.DE                  1   1.0013   1.9987        1        1        1
+  AYDGn.DE                 1        1        1        1        1        1
+  5ABG.F                   1        1        1        1        1        1
+  AOFG.DE                  1        1        1        1        2        1
+  NSUG.DE                  1        1        1        2        1        1
+  NAFG.DE                  1        1        1        1        1        1
+  AVES.DE                  1        1        1        1        1        2
+  SPRGn.DE            1.9992        1        1        1   1.0001   1.0007
+  BTTG.F                   1   1.9999   1.0001        1        1        1
+  BASFn.DE                 1        1        1        1        2        1
+  BSLG.DE                  1        1        1        1        1        1
+  BST1.DE             1.0037        1   1.9963        1        1        1
+  B5AG.DE              1.974        1        1        1        1    1.026
+  BAYGn.DE                 1        1        1   1.0003   1.9997        1
+  BYWGnx.DE           1.9993        1        1        1        1   1.0007
+  BYWG.DE                  1        1        1        1   1.0001   1.9999
+  BKTG_p.F                 1   1.9997   1.0003        1        1        1
+  USEG.DE             1.0002        1   1.9998        1        1        1
+  BC8G.DE                  1        1        1        1        2        1
+  BEIG.DE                  1        1        1        1        1        1
+  BEZ.DE                   1        1        1        1        1        1
+  MBHG_p.F                 1        1        1        1        2        1
+  BDTG.DE                  1        1        1        1        2        1
+  ARTG.DE                  1        1        1        1        1        1
+  BHSG.F                   1        1        1        1        1        1
+  BIJG.DE             1.9995        1        1        1        1   1.0004
+  GBFG.DE                  1        1        1        1        1        1
+  B8FGn.DE            1.0014        1   1.9986        1        1        1
+  BIOG.DE             1.9924        1        1        1        1   1.0076
+  BIOG_p.DE           1.9998        1        1        1        1   1.0002
+  BTBA.DE                  1        1        2        1        1        1
+  BMWG_p.DE                1        1        1        1        1        1
+  BMWG.DE                  1        1        1   1.0003   1.9997        1
+  BSYG.F                   1   1.9956   1.0044        1        1        1
+  BNNn.DE                  1        1        1        1        1        1
+  BNRGn.DE            1.9946        1        1        1   1.0052   1.0002
+  DTDGk.DE                 1        1        2        1        1        1
+  BVB.DE              1.0004        1   1.9996        1        1        1
+  COKG.DE             1.9941        1        1        1   1.0058        1
+  HWAG.DE             1.1458        1   1.8542        1        1        1
+  CSHG.DE             1.9996        1        1        1        1   1.0004
+  CEVG.DE             1.1797        1   1.8202        1        1        1
+  CWCG.DE                  1        1        1        1        1        1
+  CSGG.F                   1   1.9923   1.0077        1        1        1
+  CU1G.DE             1.0039        1   1.9961        1        1        1
+  CAGGk.DE                 1        1        1        1        1        1
+  CNWKk.DE            1.0027        1   1.9973        1        1        1
+  CDBG.DE             1.0356        1   1.9644        1        1        1
+  CBKG.DE                  1        1        1        1        1        1
+  COPMa.DE            1.9994        1        1        1   1.0002   1.0004
+  EV4G.DE             1.0001        1   1.9999        1        1        1
+  CONG.DE                  1        1        1        2        1        1
+  1COV.DE             1.9742        1        1        1   1.0253   1.0005
+  ACWNn.DE                 1        1        1        1        1        2
+  AFXG.DE                  1        1        1        1        1        1
+  CE2G.DE             1.0041        1   1.9959        1        1        1
+  CURG.DE                  1        1        1        1        1        1
+  DAIGn.DE                 1        1        1        1        2        1
+  DAMG.DE                  1        1        1        1        1        2
+  FAM1.F                   1        1        1        1        1        1
+  ERMGk.DE            1.0001        1   1.9999        1        1        1
+  333.DE                   1        1   1.9999        1        1   1.0001
+  DEXGn.DE            1.9952        1        1        1        1   1.0048
+  DMRE.DE             1.0019        1   1.9981        1        1        1
+  DBKGn.DE            1.9995        1        1        1        1   1.0005
+  DBANn.DE             1.999        1        1        1        1    1.001
+  DB11.DE                  1        1        1        1        1        1
+  DEQGn.DE            1.9994        1        1        1        1   1.0006
+  PBBG.DE                  2        1        1        1        1        1
+  DPWGn.DE            1.9969        1        1        1        1   1.0031
+  DTEGn.DE                 1        1        1        1        1        1
+  DWNG.DE              1.999        1        1        1        1    1.001
+  DREGa.F                  1    1.933    1.067        1        1        1
+  DEZG.DE             1.0059        1   1.9941        1        1        1
+  DFTKn.DE             1.001        1   1.0047        1        1   1.9942
+  DICn.DE                  1        1        1        1        1        1
+  WING.DE                  1        1        1        1        1        1
+  DIEG.F                   1   1.9987   1.0013        1        1        1
+  GILG.DE             1.9555        1        1        1        1   1.0445
+  HNLG.DE             1.9025        1        1        1        1   1.0974
+  DRWG_p.DE                1        1        1        1        2        1
+  DRWG.DE                  1        1        1        1        1        1
+  DRIG.DE                  1        1        1        1        1        1
+  DKAG.F                   1        1        1        1        1        1
+  DUEG.DE                  1        1        1        1        1        1
+  DVBG.F                   1   1.9991   1.0009        1        1        1
+  EONGn.DE                 2        1        1        1        1        1
+  ESYG.DE                  1        1        2        1        1        1
+  EUZG.DE             1.9998        1        1        1        1   1.0001
+  E4CG.DE                  1        1        1        1        1        1
+  EING_p.DE                1        1        1        1        1        1
+  EISG.F                   1        1        1        1        1        2
+  ELNk.F                   1        1        2        1        1        1
+  ELGG.DE             1.9996        1        1        1        1   1.0004
+  ZILGn.DE            1.9982        1        1        1        1   1.0017
+  ELBG.DE                  1        1        1        1        1        2
+  EMQG.DE                  1        1        1        1        1        1
+  EBKG.DE             1.0051        1        1        1        1   1.9949
+  EKTG.F                   1        1   1.9953        1        1   1.0047
+  EXJ.F                    1   1.9997   1.0003        1        1        1
+  ECXn.F                   1        1        1        1        1        1
+  EUCAn.DE                 1        1        1        1        1        1
+  EVDG.DE             1.9992        1        1        1        1   1.0008
+  EVKn.DE                  1        1        1        1        1        1
+  EVTG.DE             1.0073        1   1.9927        1        1        1
+  BTCGk.F                  1        1        1        1        1        1
+  FVIG.DE                  1        1        2        1        1        1
+  HBD1.F                   1   1.9958   1.0042        1        1        1
+  FIEG.DE             1.9939        1        1        1    1.006        1
+  SISG.DE             1.9995        1   1.0002        1        1   1.0002
+  FRSG.DE                  1        1        2        1        1        1
+  FEVG.DE                  1        1        2        1        1        1
+  FPHG.DE                  1        1        2        1        1        1
+  FRAG.DE                  1        1        1        1        1        1
+  FNTGn.DE                 1        1        1        1        1        1
+  FREG.DE                  1        1        1        1        1        1
+  FMEG.DE                  1        1        1        1        1        1
+  FNGG.F                   1        1        1        1        1        1
+  CEAG.DE                  1        1        1        1        1        2
+  FROG_p.F                 1   1.9997   1.0003        1        1        1
+  FROG.F                   1   1.9997   1.0003        1        1        1
+  FPEG_p.DE           1.9961        1        1        1   1.0002   1.0037
+  FPEG.DE                  1        1        1        1        1        1
+  G1AG.DE                  1        1        1        1        1        1
+  WWGG.F                   1        1        1        1        1        1
+  GMEG.DE             1.0147        1   1.9852        1        1        1
+  GXIG.DE             1.0002        1        1        1   1.9998        1
+  GWIG.DE                  1        1        1        1        1        1
+  GSC1n.DE                 1        1        1        1        1        1
+  GFKG.DE             1.9998        1        1        1        1   1.0002
+  GFTG.DE              1.999        1        1        1   1.0001   1.0009
+  GGS.DE                   1        1        1        1        1        1
+  GKSG.DE                  1        1        1        1        1        1
+  GMMG.DE              1.001        1        1        1    1.999        1
+  GLJn.DE                  1        1        1        1        1        1
+  GIBG.F                   1        1        1        1        1        1
+  G7BG.F                   1   1.9999   1.0001        1        1        1
+  2HR.DE                   1        1        1        1        1        1
+  HABG.DE                  1        1        1        1        1        1
+  HNRGn.DE                 1        1        1        1        2        1
+  H9YG.F                   1   1.6147   1.3853        1        1        1
+  HLAG.DE             1.9993        1        1        1        1   1.0007
+  HAWG.DE             1.1659        1        1        1        1   1.8341
+  IPOG.F                   1        1        1        1        1        1
+  HEIG.DE                  1        1        1        1        1        1
+  HDDG.DE             1.0031        1   1.9969        1        1        1
+  H2Fn.DE             1.0003        1   1.9997        1        1        1
+  HLE.DE              1.9945        1        1        1   1.0047   1.0008
+  HNKG.DE                  1        1        1        1        1        1
+  HNKG_p.DE                1        1        1        1        2        1
+  RTMLk.F                  1        2        1        1        1        1
+  HHFGn.DE            1.9999        1        1        1        1   1.0001
+  HOTG.DE                  1        1        1        1        2        1
+  HOC.DE                   1        1        1        1        1        1
+  HBMG.DE                  1        1        1        1        1        1
+  HBH.DE              1.0009        1        1        1   1.9991        1
+  BOSSn.DE                 1        1        1        1        2        1
+  HYQGn.DE                 1        1        1        1        1        1
+  IFAG.F                   1        1        2        1        1        1
+  FAOGn.DE                 1        1        1        1        1        2
+  INHG.DE                  1        1        1        1        1        1
+  IFS1.F                   1   1.9985   1.0015        1        1        1
+  IFXGn.DE                 1        1        1        1        1        1
+  IXXG.DE                  1        1        1        1        1        1
+  IGY.DE                   1        1        1        1        1        1
+  ISHG.DE                  1        1        1        1        1        1
+  ITMG.DE                  1        1        1        1        1        1
+  IS7G.DE                  1        1        1        1        1        1
+  IVXG.DE                  1        1        1        1        1        1
+  ISRG.DE                  1        1        1        1        2        1
+  I7NG.DE                  1        1        2        1        1        1
+  IVUG.DE                  1        1        1        1        1        1
+  JENG.DE             1.9999        1        1        1        1   1.0001
+  [total]           239.7339 218.5295 241.6611 203.9865 221.0593 213.0297
+VaR_95(%)
+  mean              -75.7546 -20.5305 -17.7487 -721.654 -256.432  -84.056
+  std. dev.          33.3565  47.7535   9.8608 361.0533  88.9316  20.4019
+
+StdDev
+  mean                0.4637   0.1283   0.1069   4.4642   1.5514   0.5083
+  std. dev.           0.2021   0.3036   0.0587   2.2106   0.5016   0.1252
+
+Risk_of_Loss (%)
+  mean               52.0636   4.2984  37.3512  50.3124  49.1428  31.4978
+  std. dev.           5.0074   3.1322  12.6436   1.1242   6.3102   12.806
+
+Beta
+  mean                 0.017  -0.0001   0.0014   0.1945    0.063  -0.0064
+  std. dev.           0.0104   0.0004   0.0014   0.0469   0.0182   0.0283
+
+Sharpe
+  mean                 0.026    0.029   0.0309  -0.0225   0.0326   0.0537
+  std. dev.           0.0037   0.0019   0.0224   0.0509   0.0371   0.0653
+
+
+
+Time taken to build model (percentage split) : 1.36 seconds
+
+Clustered Instances
+
+0      25 ( 36%)
+1       2 (  3%)
+2      21 ( 30%)
+3       1 (  1%)
+4      16 ( 23%)
+5       4 (  6%)
+
+
+Log likelihood: -21.76247
+
