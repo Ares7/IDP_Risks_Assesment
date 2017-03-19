@@ -32,4 +32,4 @@ def val_at_risk(rets, conf, bootstrap=False,n_days=1):
                 simulated.append((1+sample).prod()-1)
         res = np.percentile(simulated, q=conf*100)
     return abs(res)
-
+ 

@@ -4,32 +4,12 @@ import pandas as pd
 import numpy as np
 import re as re
 import risk_metrics_single as sr
+import fy_constants as FY
+import fy_ratios as fyr
 #from datetime import datetime
 #from scipy.stats import norm
 
-FY_ID = 'ID'
-FY_YEAR = 'Year'
-FY_ISIN = 'ISIN'
-FY_EBITDA = 'EBITDA'
-FY_EBIT = 'EBIT'
-FY_EBT = 'EBT'
-FY_NET_INCOME = 'Net Income'
-FY_TOT_REVENUE = 'Tot Revenue'
-FY_TOT_DEBT = 'Tot Debt'
-FY_ACC_RECEIVABLE = 'Acc Receivable'
-FY_ACC_PAYABLE = 'Acc Payable'
-FY_TOT_INVENTORY = 'Tot Inventory'
-FY_COGS = 'COGS'
-FY_ENTERPR_VALUE = 'Enterpr Value'
-FY_NET_DEBT = 'Net Debt'
-FY_TOT_CURR_ASSETS = 'Tot Curr Assets'
-FY_TOT_CURR_LIABILITIES = 'Tot Curr Liabilities'
-FY_TOT_LIABILITIES = 'Tot Liabilities'
-FY_TOT_EQUITY = 'Tot Equity'
-FY_TOT_COMMON_STOCK = 'Tot Common Stock'
-FY_SHARES_OUT = 'Shares Out'
-FY_CASH_N_EQUIVALENTS = 'Cash & Equivalents'
-FY_NUM_EMPLOYEES = 'Number of Employees'
+
 
    
 
@@ -73,33 +53,33 @@ def getFYData_SingleYear(xl, wsName = 'FY0'):
     rawData = xl.parse(wsName, header = 0, na_values = ['NULL'])
     
     remapCols = dict()
-    remapCols['ID'] = FY_ID
-    remapCols['Year'] = FY_YEAR
-    remapCols['ISIN'] = FY_ISIN
-    remapCols['Normalized EBITDA'] = FY_EBITDA
-    remapCols['Normalized EBIT'] = FY_EBIT
-    remapCols['Normalized Income Before Taxes'] = FY_EBT
-    remapCols['Normalized Income After Taxes'] = FY_NET_INCOME
-    remapCols['Total Revenue'] = FY_TOT_REVENUE
-    remapCols['Total Debt'] = FY_TOT_DEBT
-    remapCols['Accounts Receivable - Trade, Net'] = FY_ACC_RECEIVABLE
-    remapCols['Accounts Payable'] = FY_ACC_PAYABLE
-    remapCols['Total Inventory'] = FY_TOT_INVENTORY
-    remapCols['Cost Of Goods Sold - Actual'] = FY_COGS
-    remapCols['Enterprise Value (Daily Time Series)'] = FY_ENTERPR_VALUE
-    remapCols['Net Debt - Mean'] = FY_NET_DEBT
-    remapCols['Total Current Assets'] = FY_TOT_CURR_ASSETS
-    remapCols['Total Current Liabilities'] = FY_TOT_CURR_LIABILITIES
-    remapCols['Total Liabilities'] = FY_TOT_LIABILITIES
-    remapCols['Total Equity'] = FY_TOT_EQUITY
-    remapCols['Common Stock, Total'] = FY_TOT_COMMON_STOCK
-    remapCols['Shares Out - Common Stock Primary Issue'] = FY_SHARES_OUT
-    remapCols['Cash and Equivalents'] = FY_CASH_N_EQUIVALENTS
-    remapCols['Number of Employees'] = FY_NUM_EMPLOYEES
+    remapCols['ID'] = FY.ID
+    remapCols['Year'] = FY.YEAR
+    remapCols['ISIN'] = FY.ISIN
+    remapCols['Normalized EBITDA'] = FY.EBITDA
+    remapCols['Normalized EBIT'] = FY.EBIT
+    remapCols['Normalized Income Before Taxes'] = FY.EBT
+    remapCols['Normalized Income After Taxes'] = FY.NET_INCOME
+    remapCols['Total Revenue'] = FY.TOT_REVENUE
+    remapCols['Total Debt'] = FY.TOT_DEBT
+    remapCols['Accounts Receivable - Trade, Net'] = FY.ACC_RECEIVABLE
+    remapCols['Accounts Payable'] = FY.ACC_PAYABLE
+    remapCols['Total Inventory'] = FY.TOT_INVENTORY
+    remapCols['Cost Of Goods Sold - Actual'] = FY.COGS
+    remapCols['Enterprise Value (Daily Time Series)'] = FY.ENTERPR_VALUE
+    remapCols['Net Debt - Mean'] = FY.NET_DEBT
+    remapCols['Total Current Assets'] = FY.TOT_CURR_ASSETS
+    remapCols['Total Current Liabilities'] = FY.TOT_CURR_LIABILITIES
+    remapCols['Total Liabilities'] = FY.TOT_LIABILITIES
+    remapCols['Total Equity'] = FY.TOT_EQUITY
+    remapCols['Common Stock, Total'] = FY.TOT_COMMON_STOCK
+    remapCols['Shares Out - Common Stock Primary Issue'] = FY.SHARES_OUT
+    remapCols['Cash and Equivalents'] = FY.CASH_N_EQUIVALENTS
+    remapCols['Number of Employees'] = FY.NUM_EMPLOYEES
 
     rawData.rename(columns=remapCols, inplace=True)
  
-    rawData.set_index([FY_ID],inplace=True)
+    rawData.set_index([FY.ID],inplace=True)
     return rawData      
         
 def getFYData_Multiple(xl, endYear):
@@ -111,10 +91,38 @@ def getFYData_Multiple(xl, endYear):
             offset = int(m.group(1))
             currentYear = endYear + offset
             dfTmp = getFYData_SingleYear(xl, sheet)
-            dfTmp[FY_YEAR] = currentYear
-            dfTmp.set_index([FY_YEAR], append=True,inplace=True)
+            dfTmp[FY.YEAR] = currentYear
+            dfTmp.set_index([FY.YEAR], append=True,inplace=True)
             dfRes = dfRes.append(dfTmp)
     return dfRes  
+
+def getRiskMatrix(dictTS, dfFY, begDate, endDate):
+    date_beg = pd.to_datetime(begDate)
+    date_end = pd.to_datetime(endDate)
+    date_1M = date_end - np.timedelta64(30,'D')    
+
+    dfRes = pd.DataFrame()
+    #calculate items from TS
+    for currentID, dfRet in dictTS.items():
+        dates = dfRet.index
+        mask_period = (dates >= date_beg) & (dates <= date_end)
+        mask_1M = (dates >= date_1M) & (dates <= date_end)
+        mask_beforeEnd = (dates <= date_end)
+        
+        dfRes.loc[currentID,'stddev'] = sr.stddev(dfRet[mask_period])
+        dfRes.loc[currentID,'stddev_1M'] = sr.stddev(dfRet[mask_1M])        
+        dfRes.loc[currentID,'VaR95_daily'] = sr.val_at_risk(dfRet[mask_beforeEnd],0.05)
+    #calculate items from FY
+    for currentID in dfFY.index.get_level_values(FY.ID):
+        dfTmp = dfFY.ix[currentID]
+        dfRes.loc[currentID,'current_ratio'] = fyr.current_ratio(dfTmp, date_end.year)
+        dfRes.loc[currentID,'quick_ratio'] = fyr.quick_ratio(dfTmp, date_end.year)
+        dfRes.loc[currentID,'debt_ratio'] = fyr.debt_ratio(dfTmp, date_end.year)
+        dfRes.loc[currentID,'gearing'] = fyr.gearing(dfTmp, date_end.year)
+        dfRes.loc[currentID,'leverage'] = fyr.leverage(dfTmp, date_end.year)
+        dfRes.loc[currentID,'net_leverage'] = fyr.net_leverage(dfTmp, date_end.year)    
+        
+    return dfRes
 
 inputDir = 'C:\\Users\\ankifor\\Desktop\\IDP\\IDP_Risks_Assesment'
 rawDataPath = inputDir + '\\' + 'prepared_instruments1.xlsx'
@@ -122,17 +130,19 @@ rawDataPath = inputDir + '\\' + 'prepared_instruments1.xlsx'
 xl = pd.ExcelFile(rawDataPath)
 dfFY = getFYData_Multiple(xl, 2016)
 dfTS = getTS(xl)
-dictRet = getDictOfReturns(dfTS)
+dictTS = getDictOfReturns(dfTS)
 xl.close()
 
+dfRiskM = getRiskMatrix(dictTS,dfFY,'2015-12-31','2016-09-30')
+print(dfRiskM.head())
 #begDate = np.datetime64('2015-12-31')
 #endDate = np.datetime64('2016-09-30')
 
-for currentID, df in dictRet.items():
-    vals = [sr.stddev(df), 
-            sr.val_at_risk(df,0.05),
-            sr.val_at_risk(df,0.05,True)]
-    print(vals)
+#for currentID, df in dictRet.items():
+#    vals = [sr.stddev(df), 
+#            sr.val_at_risk(df,0.05),
+#            sr.val_at_risk(df,0.05,True)]
+#    print(vals)
 
 
 
