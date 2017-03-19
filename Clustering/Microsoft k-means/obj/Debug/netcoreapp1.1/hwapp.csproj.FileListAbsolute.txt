@@ -1,0 +1,8 @@
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/bin/Debug/netcoreapp1.1/hwapp.deps.json
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/bin/Debug/netcoreapp1.1/hwapp.runtimeconfig.json
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/bin/Debug/netcoreapp1.1/hwapp.runtimeconfig.dev.json
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/bin/Debug/netcoreapp1.1/hwapp.dll
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/bin/Debug/netcoreapp1.1/hwapp.pdb
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/obj/Debug/netcoreapp1.1/hwapp.AssemblyInfo.cs
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/obj/Debug/netcoreapp1.1/hwapp.dll
+/Users/sergey/Documents/TUM/IDP/Clustering/hwapp/obj/Debug/netcoreapp1.1/hwapp.pdb
