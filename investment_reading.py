@@ -3,6 +3,7 @@
 import pandas as pd
 import numpy as np
 import re as re
+import risk_metrics_single as sr
 #from datetime import datetime
 #from scipy.stats import norm
 
@@ -118,13 +119,22 @@ def getFYData_Multiple(xl, endYear):
 inputDir = 'C:\\Users\\ankifor\\Desktop\\IDP\\IDP_Risks_Assesment'
 rawDataPath = inputDir + '\\' + 'prepared_instruments1.xlsx'
 
-
-#print(dictRet)
 xl = pd.ExcelFile(rawDataPath)
 dfFY = getFYData_Multiple(xl, 2016)
-dfTS = getTS(xl,'2015-12-31','2016-09-30')
+dfTS = getTS(xl)
 dictRet = getDictOfReturns(dfTS)
 xl.close()
-#x = pd.DataFrame(np.random.rand(10))
-#x.iloc[np.random.randint(0,9,3),0] = None
-#print(x.fillna(method='ffill'))
+
+#begDate = np.datetime64('2015-12-31')
+#endDate = np.datetime64('2016-09-30')
+
+for currentID, df in dictRet.items():
+    vals = [sr.stddev(df), 
+            sr.val_at_risk(df,0.05),
+            sr.val_at_risk(df,0.05,True)]
+    print(vals)
+
+
+
+#x = pd.DataFrame(np.random.rand(10))*0.1
+
