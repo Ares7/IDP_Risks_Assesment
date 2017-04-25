@@ -123,9 +123,10 @@ def getRiskMatrix(dictTS, dfFY, begDate, endDate):
         dfRes.loc[currentID,'net_leverage'] = fyr.net_leverage(dfTmp, date_end.year)    
         
     return dfRes
-
-inputDir = 'C:\\Users\\ankifor\\Desktop\\IDP\\IDP_Risks_Assesment'
+inputDir = '/Users/sergey/Documents/TUM/IDP'
+#inputDir = 'C:\\Users\\ankifor\\Desktop\\IDP\\IDP_Risks_Assesment'
 rawDataPath = inputDir + '\\' + 'prepared_instruments1.xlsx'
+rawDataPath = inputDir + '/' + 'prepared_instruments.xlsx'
 
 xl = pd.ExcelFile(rawDataPath)
 dfFY = getFYData_Multiple(xl, 2016)
@@ -134,7 +135,10 @@ dictTS = getDictOfReturns(dfTS)
 xl.close()
 
 dfRiskM = getRiskMatrix(dictTS,dfFY,'2015-12-31','2016-09-30')
+
+#dfRiskM.to_csv('/Users/sergey/Documents/TUM/IDP/Clustering/TargetMatrixFY.csv', sep='\t', float_format='%.7f', encoding='utf-8', decimal = ',')
 print(dfRiskM.head())
+
 #begDate = np.datetime64('2015-12-31')
 #endDate = np.datetime64('2016-09-30')
 
